@@ -1,0 +1,201 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Espace Enseignant</title>
+
+<style>
+:root{
+  --accent:#f88967;
+  --card:#ffffffd6;
+  --bg:#f6f8fb;
+  --muted:#6b7280;
+  font-family: Inter, sans-serif;
+}
+
+body{
+  margin:0;
+  background-image:url('images/image2.jpg');
+  background-size:cover;
+  background-position:center;
+  padding:30px 10px;
+  display:flex;
+  justify-content:center;
+  min-height:100vh;
+}
+
+.dashboard{
+  width:100%;
+  max-width:900px;
+  background:var(--card);
+  border-radius:16px;
+  padding:25px 30px;
+  box-shadow:0 10px 25px rgba(0,0,0,0.2);
+  backdrop-filter: blur(6px);
+}
+
+h1{
+  text-align:center;
+  color:var(--accent);
+  margin-top:0;
+}
+
+/* --- RADIO BUTTONS POUR SWITCHER --- */
+input[type=radio]{
+  display:none;
+}
+
+/* Tabs */
+.tabs{
+  display:flex;
+  justify-content:center;
+  flex-wrap:wrap;
+  gap:10px;
+  margin-bottom:20px;
+}
+
+.tabs label{
+  padding:10px 18px;
+  background:#fff;
+  border-radius:10px;
+  cursor:pointer;
+  border:2px solid transparent;
+  font-weight:600;
+  transition:0.2s;
+}
+
+#tab1:checked ~ .tabs label[for="tab1"],
+#tab2:checked ~ .tabs label[for="tab2"],
+#tab3:checked ~ .tabs label[for="tab3"],
+#tab4:checked ~ .tabs label[for="tab4"],
+#tab5:checked ~ .tabs label[for="tab5"]{
+  border-color:var(--accent);
+  color:var(--accent);
+}
+
+/* Sections */
+.section{
+  display:none;
+  padding:10px;
+}
+
+/* Affichage des sections selon radio */
+#tab1:checked ~ .content #dossier{ display:block; }
+#tab2:checked ~ .content #activite{ display:block; }
+#tab3:checked ~ .content #presence{ display:block; }
+#tab4:checked ~ .content #calendrier{ display:block; }
+#tab5:checked ~ .content #messages{ display:block; }
+
+/* Cards */
+.card-box{
+  background:white;
+  padding:15px;
+  border-radius:10px;
+  margin-top:10px;
+  box-shadow:0 3px 10px rgba(0,0,0,0.1);
+}
+
+button{
+  background:var(--accent);
+  border:none;
+  color:#fff;
+  padding:10px 14px;
+  border-radius:8px;
+  margin-top:10px;
+  cursor:pointer;
+}
+button:hover{
+  filter:brightness(0.9);
+}
+</style>
+</head>
+
+<body>
+<div class="dashboard">
+
+  <h1>Espace Enseignant</h1>
+
+  <!-- Radios -->
+  <input type="radio" name="tab" id="tab1" checked>
+  <input type="radio" name="tab" id="tab2">
+  <input type="radio" name="tab" id="tab3">
+  <input type="radio" name="tab" id="tab4">
+  <input type="radio" name="tab" id="tab5">
+
+  <!-- Onglets -->
+  <div class="tabs">
+    <label for="tab1">Dossier enfant</label>
+    <label for="tab2">Activités</label>
+    <label for="tab3">Présences</label>
+    <label for="tab4">Calendrier</label>
+    <label for="tab5">Messages</label>
+     <a href="login.html" style="padding:10px 18px; background:var(--accent); color:white; border-radius:10px; text-decoration:none; font-weight:600;">Déconnexion</a>
+  </div>
+
+  <!-- Sections -->
+  <div class="content">
+
+    <!-- Dossier enfant -->
+    <div class="section" id="dossier">
+      <h2>Dossiers des enfants</h2>
+      <div class="card-box">
+        <h3>Amir B.</h3>
+        <p>Âge : 4 ans</p>
+        <p>Allergie : Aucune</p>
+        <button>Voir dossier complet</button>
+      </div>
+      <div class="card-box">
+        <h3>Sarah L.</h3>
+        <p>Âge : 3 ans</p>
+        <p>Allergie : Arachides</p>
+        <button>Voir dossier complet</button>
+      </div>
+    </div>
+
+    <!-- Activités -->
+    <div class="section" id="activite">
+      <h2>Gestion des activités</h2>
+      <div class="card-box">
+        <h3>Peinture créative</h3>
+        <p>Âge recommandé : 3–5 ans</p>
+        <button>Enregistrer participation</button>
+      </div>
+      <div class="card-box">
+        <h3>Jeu extérieur</h3>
+        <p>Durée : 30 minutes</p>
+        <button>Enregistrer participation</button>
+      </div>
+      <div class="card-box">
+        <h3>Musique & danse</h3>
+        <p>Développement moteur</p>
+        <button>Enregistrer participation</button>
+      </div>
+    </div>
+
+    <!-- Présences -->
+    <div class="section" id="presence">
+      <h2>Feuille de présence</h2>
+      <div class="card-box">
+        <p>Amir B. <input type="checkbox"> Présent</p>
+        <p>Sarah L. <input type="checkbox"> Présent</p>
+      </div>
+    </div>
+
+    <!-- Calendrier -->
+    <div class="section" id="calendrier">
+      <h2>Calendrier</h2>
+      <p>Voir planning des activités et événements spéciaux.</p>
+    </div>
+
+    <!-- Messages -->
+    <div class="section" id="messages">
+      <h2>Messages</h2>
+      <p>Envoyer ou recevoir des messages avec les parents.</p>
+    </div>
+
+  </div>
+</div>
+
+</body>
+</html>
