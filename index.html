@@ -4,7 +4,7 @@
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>CPE — Accueil</title>
- 
+
 <style>
 :root{
   --bg:#f6f8fb;
@@ -14,9 +14,9 @@
   --text-dark:#111;
   font-family: Inter, ui-sans-serif, system-ui;
 }
- 
+
 body{margin:0; background:var(--bg); color:var(--text-dark);}
- 
+
 /* Header */
 header{
   background:var(--accent);
@@ -41,7 +41,7 @@ header{
   justify-content:center;
   background:rgba(255,255,255,0.12); /* optionnel, juste si tu veux un fond derrière */
 }
- 
+
 .logo img{
   width:100%;
   height:100%;
@@ -52,7 +52,7 @@ nav a{
   font-weight:600; border-radius:8px;
 }
 nav a:hover{background:rgba(255,255,255,0.1);}
- 
+
 /* Hero */
 .hero{
   padding:110px 20px;
@@ -83,7 +83,7 @@ nav a:hover{background:rgba(255,255,255,0.1);}
   transition:0.3s;
 }
 .cta:hover{opacity:0.85; transform:scale(1.05);}
- 
+
 /* Sections */
 .section{
   max-width:1000px;
@@ -100,7 +100,7 @@ nav a:hover{background:rgba(255,255,255,0.1);}
   text-align:center;
   margin-bottom:20px;
 }
- 
+
 /* Services Grid */
 .services{
   display:grid;
@@ -122,7 +122,7 @@ nav a:hover{background:rgba(255,255,255,0.1);}
   margin-bottom:10px;
   color:var(--accent);
 }
- 
+
 /* Testimonials */
 .testimonials{
   display:grid;
@@ -139,11 +139,11 @@ nav a:hover{background:rgba(255,255,255,0.1);}
   transition:0.2s;
 }
 .testimonial:hover{transform:scale(1.03);}
- 
+
 /* Animations */
 @keyframes fadeIn {from {opacity:0;} to {opacity:1;}}
 @keyframes slideDown {from {transform:translateY(-20px); opacity:0;} to {transform:translateY(0); opacity:1;}}
- 
+
 /* Footer */
 footer{
   margin-top:60px;
@@ -153,54 +153,11 @@ footer{
 }
 </style>
 </head>
- 
+
 <body>
-  <style>
-  /* Header */
-  :root{
-  --bg:#f6f8fb;
-  --card:#ffffffcc;
-  --accent:#f88967;
-  --muted:#6b7280;
-  --text-dark:#111;
-  font-family: Inter, ui-sans-serif, system-ui;
-}
-header{
-  background:var(--accent);
-  padding:12px 20px;
-  color:white;
-  position:sticky;
-  top:0;
-  z-index:100;
-}
-.header-inner{
-  max-width:1100px; margin:0 auto;
-  display:flex; align-items:center; justify-content:space-between;
-}
-.brand{display:flex; align-items:center; gap:12px; font-weight:700;}
-.logo{
-  width:44px;
-  height:44px;
-  border-radius:50%; /* pour rendre l'image ronde */
-  overflow:hidden;   /* coupe les parties dépassantes */
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  background:rgba(255,255,255,0.12); /* optionnel, juste si tu veux un fond derrière */
-}
- 
-.logo img{
-  width:100%;
-  height:100%;
-  object-fit:cover; /* pour que l'image remplisse bien le cercle sans déformation */
-}
-nav a{
-  color:white; text-decoration:none; padding:8px 12px;
-  font-weight:600; border-radius:8px;
-}
-nav a:hover{background:rgba(255,255,255,0.1);}
-</style>
-  <header>
+
+<!-- HEADER -->
+<header>
   <div class="header-inner">
     <div class="brand">
       <div class="logo">
@@ -208,88 +165,84 @@ nav a:hover{background:rgba(255,255,255,0.1);}
       </div>
       <div>Centre de la Petite Enfance</div>
     </div>
- 
+
     <nav>
-      <a href="index.html">Accueil</a>
-      <a href="index.html">Services</a>
-      <a href="index.html">Contact</a>
+      <a href="#">Accueil</a>
+      <a href="#services">Services</a>
+      <a href="#contact">Contact</a>
       <a href="login.html">Connexion</a>
     </nav>
   </div>
 </header>
-    <!-- Formulaire d'inscription ajouté -->
-<section id="form-inscription" style="
-  max-width:750px;
-  margin:40px auto;
-  padding:35px;
-  border-radius:15px;
-  background: linear-gradient(135deg, #ffec9a, #ff9f82);
-  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
-  color:#111;
-  font-family: 'Inter', sans-serif;
-">
- 
-  <h2 style="margin-top:0; text-align:center; color:#f88967;; font-size:2rem;">📝 Formulaire d’inscription</h2>
- 
-  <form style="margin-top:25px; display:flex; flex-direction:column; gap:15px;">
- 
-    <!-- Parent -->
-    <label>Nom complet du parent
-      <input type="text" required style="width:100%;padding:12px;border:none;border-radius:10px;box-shadow:0 2px 6px rgba(0,0,0,0.1);">
-    </label>
- 
-    <label>Email
-      <input type="email" required style="width:100%;padding:12px;border:none;border-radius:10px;box-shadow:0 2px 6px rgba(0,0,0,0.1);">
-    </label>
- 
-    <label>Numéro de téléphone
-      <input type="tel" placeholder="ex: 819-555-1234" required style="width:100%;padding:12px;border:none;border-radius:10px;box-shadow:0 2px 6px rgba(0,0,0,0.1);">
-    </label>
- 
-    <!-- Enfant -->
-    <label>Nom de l’enfant
-      <input type="text" required style="width:100%;padding:12px;border:none;border-radius:10px;box-shadow:0 2px 6px rgba(0,0,0,0.1);">
-    </label>
- 
-    <label>Date de naissance
-      <input type="date" required style="width:100%;padding:12px;border:none;border-radius:10px;box-shadow:0 2px 6px rgba(0,0,0,0.1);">
-    </label>
- 
-    <label>Sexe de l’enfant
-      <select required style="width:100%;padding:12px;border:none;border-radius:10px;box-shadow:0 2px 6px rgba(0,0,0,0.1);">
-        <option value="">Sélectionnez</option>
-        <option>Fille</option>
-        <option>Garçon</option>
-        <option>Préférons ne pas répondre</option>
-      </select>
-    </label>
- 
-    <label>Allergies ou restrictions alimentaires (optionnel)
-      <input type="text" placeholder="Aucune si vide" style="width:100%;padding:12px;border:none;border-radius:10px;box-shadow:0 2px 6px rgba(0,0,0,0.1);">
-    </label>
- 
-    <label>Commentaire ou besoins particuliers
-      <textarea placeholder="Ex: suivi médical, langage, mobilité..." style="width:100%;padding:12px;border:none;border-radius:10px;box-shadow:0 2px 6px rgba(0,0,0,0.1);height:90px;"></textarea>
-    </label>
- 
-    <!-- Bouton -->
-    <button type="submit" style="
-      padding:14px 0;
-      background: #000000;
-      color:white;
-      font-size:1.1rem;
-      font-weight:600;
-      border:none;
-      border-radius:12px;
-      cursor:pointer;
-      transition:0.3s;
-    ">✅ Envoyer la demande</button>
- 
-  </form>
-</section>
- 
- 
-<p>Nous serons heureux de vous accueillir.</p>
+
+<!-- HERO -->
+<div class="hero">
+  <h1>Vous souhaitez inscrire votre enfant ?</h1>
+  <p>Un environnement sécuritaire, éducatif et rempli d’activités stimulantes.</p>
+  <a class="cta" href="formulaire.html">Remplir une demande d’inscription</a>
+</div>
+
+<!-- SECTION À PROPOS -->
+<div class="section">
+  <h2>Pourquoi choisir notre CPE ?</h2>
+  <p style="text-align:center; font-size:1.1rem; line-height:1.6;">
+    Nous accueillons vos enfants dans un espace chaleureux où le jeu, la découverte
+    et l'apprentissage sont au cœur de chaque journée. Nos éducateurs qualifiés
+    accompagnent les tout-petits dans leur développement global.
+  </p>
+</div>
+
+<!-- SERVICES -->
+<div class="section" id="services">
+  <h2>Nos services</h2>
+
+  <div class="services">
+    <div class="service">
+      <div class="service-icon">🎨</div>
+      <h3>Ateliers créatifs</h3>
+      <p>Peinture, bricolage, musique et activités sensorielles adaptées à chaque âge.</p>
+    </div>
+
+    <div class="service">
+      <div class="service-icon">🥗</div>
+      <h3>Repas équilibrés</h3>
+      <p>Menus sains et variés préparés selon les besoins alimentaires des enfants.</p>
+    </div>
+
+    <div class="service">
+      <div class="service-icon">🤸‍♂️</div>
+      <h3>Jeux extérieurs</h3>
+      <p>Sorties quotidiennes dans notre cour sécurisée pour bouger et s’amuser.</p>
+    </div>
+
+    <div class="service">
+      <div class="service-icon">📚</div>
+      <h3>Apprentissages adaptés</h3>
+      <p>Préparation à la maternelle, activités éducatives et routine structurée.</p>
+    </div>
   </div>
+</div>
+
+<!-- TÉMOIGNAGES -->
+<div class="section">
+  <h2>Témoignages des parents</h2>
+
+  <div class="testimonials">
+    <div class="testimonial">“Mon fils adore venir au CPE ! Les éducatrices sont incroyables.” — Sarah</div>
+    <div class="testimonial">“Lieu sécuritaire, propre et rempli d’activités enrichissantes.” — Karim</div>
+    <div class="testimonial">“Merci pour tout ce que vous faites pour nos enfants au quotidien !” — Amélie</div>
+  </div>
+</div>
+
+<!-- CONTACT RAPIDE -->
+<div class="section" id="contact">
+  <h2>Contact</h2>
+  <p>📍 Gatineau, Québec</p>
+  <p>📞 819-555-1234</p>
+  <p>📧 contact@cpe-enfance.ca</p>
+</div>
+
+<footer>CPE — Tous droits réservés ©</footer>
+
 </body>
 </html>
