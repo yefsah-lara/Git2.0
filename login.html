@@ -1,0 +1,265 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>CPE — Connexion</title>
+<style>
+:root{
+  --bg:#f6f8fb;
+  --card:#ffffffcc;
+  --accent:#f88967;
+  --muted:#6b7280;
+  font-family: 'Inter', ui-sans-serif, system-ui;
+}
+
+body{
+  margin:0;
+  height:100vh;
+  background-image: url('images/image2.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  color:#111;
+  position: relative;
+}
+
+/* Header fixe */
+header{
+  background:var(--accent);
+  padding:12px 20px;
+  color:white;
+  position: fixed; /* fixée en haut */
+  top:0;
+  left:0;
+  width:100%;
+  z-index:100;
+}
+.header-inner{
+  max-width:1100px;
+  margin:0 auto;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+}
+.brand{
+  display:flex;
+  align-items:center;
+  gap:12px;
+  font-weight:700;
+}
+.logo{
+  width:44px;
+  height:44px;
+  border-radius:8px;
+  background:rgba(255,255,255,0.12);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:1.1rem;
+}
+nav a{
+  color:white;
+  text-decoration:none;
+  padding:8px 12px;
+  font-weight:600;
+  border-radius:8px;
+}
+nav a:hover{
+  background:rgba(255,255,255,0.1);
+}
+
+/* Container centré sans flex */
+.container{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  max-width: 400px;
+  padding: 20px;
+}
+
+/* Card */
+.card{
+  background: var(--card);
+  padding:35px 30px;
+  border-radius:16px;
+  box-shadow:0 10px 25px rgba(0,0,0,0.15);
+  backdrop-filter: blur(6px);
+  transition:0.4s;
+}
+
+/* Titres */
+h2{
+  text-align:center;
+  margin-top:0;
+  margin-bottom:25px;
+  color:var(--accent);
+  font-size:1.8rem;
+}
+
+/* Switch Parent / Enseignant */
+.role-switch{
+  display:flex;
+  justify-content:center;
+  gap:10px;
+  margin-bottom:20px;
+}
+.role-switch button{
+  padding:8px 16px;
+  border:none;
+  border-radius:12px;
+  cursor:pointer;
+  font-weight:600;
+  background:#ddd;
+  transition:0.3s;
+}
+.role-switch button.active{
+  background:var(--accent);
+  color:white;
+}
+
+/* Formulaire */
+label{
+  display:block;
+  margin:12px 0 6px;
+  font-weight:600;
+  color:#333;
+}
+input{
+  width:100%;
+  padding:12px;
+  border:1px solid #ccc;
+  border-radius:10px;
+  font-size:15px;
+  transition:0.2s;
+}
+input:focus{
+  outline:none;
+  border-color:var(--accent);
+  box-shadow:0 0 5px rgba(248,137,103,0.4);
+}
+button.submit-btn{
+  width:100%;
+  padding:14px;
+  margin-top:15px;
+  background: var(--accent);
+  border:none;
+  color:white;
+  font-size:16px;
+  border-radius:10px;
+  cursor:pointer;
+  transition:0.3s;
+}
+button.submit-btn:hover{
+  background:#d36b4f;
+  transform:translateY(-2px);
+}
+
+/* Lien */
+.link{
+  text-align:center;
+  margin-top:18px;
+  color:var(--muted);
+  font-size:14px;
+}
+a{
+  color:var(--accent);
+  text-decoration:none;
+  font-weight:600;
+}
+a:hover{
+  text-decoration:underline;
+}
+
+.logo{
+  width:44px;
+  height:44px;
+  border-radius:50%; /* pour rendre l'image ronde */
+  overflow:hidden;   /* coupe les parties dépassantes */
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  background:rgba(255,255,255,0.12); /* optionnel, juste si tu veux un fond derrière */
+}
+
+.logo img{
+  width:100%;
+  height:100%;
+  object-fit:cover; /* pour que l'image remplisse bien le cercle sans déformation */
+}
+</style>
+</head>
+<body>
+<!-- HEADER -->
+<header>
+  <div class="header-inner">
+    <div class="brand">
+     <div class="logo">
+        <img src="images/logo.png" alt="Logo CPE">
+      </div>
+      <div>Centre de la Petite Enfance</div>
+    </div>
+    <nav>
+      <a href="index.html">Accueil</a>
+      <a href="#services">Services</a>
+      <a href="#contact">Contact</a>
+      <a href="login.html">Connexion</a>
+    </nav>
+  </div>
+</header>
+
+<div class="container">
+  <div class="card">
+    <h2>Connexion</h2>
+    <div class="role-switch">
+      <button class="active" id="btn-parent">Parent</button>
+      <button id="btn-teacher">Enseignant</button>
+    </div>
+
+    <form id="form-parent">
+      <label>Email</label>
+      <input type="email" placeholder="Entrez votre email" required />
+      <label>Mot de passe</label>
+      <input type="password" placeholder="Entrez votre mot de passe" required />
+      <button type="submit" class="submit-btn">Se connecter</button>
+    </form>
+
+    <form action="espace_enseignant.html" id="form-teacher" style="display:none;">
+      <label>Email</label>
+      <input type="email" placeholder="Entrez votre email" required />
+      <label>Mot de passe</label>
+      <input type="password" placeholder="Entrez votre mot de passe" required />
+      <label>Code Enseignant</label>
+      <input type="text" placeholder="Ex: T1234" required />
+      <button type="submit" class="submit-btn">Se connecter</button>
+    </form>
+
+    <div class="link">
+      Pas encore de compte ? <a href="#">Créer un compte</a>
+    </div>
+  </div>
+</div>
+
+<script>
+const btnParent = document.getElementById('btn-parent');
+const btnTeacher = document.getElementById('btn-teacher');
+const formParent = document.getElementById('form-parent');
+const formTeacher = document.getElementById('form-teacher');
+
+btnParent.addEventListener('click', ()=>{
+  btnParent.classList.add('active');
+  btnTeacher.classList.remove('active');
+  formParent.style.display = 'block';
+  formTeacher.style.display = 'none';
+});
+btnTeacher.addEventListener('click', ()=>{
+  btnTeacher.classList.add('active');
+  btnParent.classList.remove('active');
+  formTeacher.style.display = 'block';
+  formParent.style.display = 'none';
+});
+</script>
+</body>
+</html>
